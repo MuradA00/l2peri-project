@@ -1,0 +1,92 @@
+:root {
+  --ff: 'Inter', sans-serif;
+  --ff_o: 'Ovo', sans-serif;
+
+  --w-clr: 255, 255, 255;
+  --b-clr: 0, 0, 0;
+  --main-clr: 131, 116, 93;
+  --bg-body: 33, 35, 40;
+
+  --cont-width: 104.875rem;
+  --cont-px: 0.75rem;
+
+  --f-xs: 0.75rem;
+  --f-sm: 0.875rem;
+  --f-base: 1rem;
+  --f-xm: 1.125rem;
+  --f-lg: 1.25rem;
+  --f-xl: 1.5rem;
+  --f-2xl: 1.75rem;
+  --f-3xl: 2rem;
+  --f-4xl: 2.25rem;
+  --f-5xl: 2.5rem;
+  --f-title: var(--f-4xl);
+
+  --promo-sec-h: 30rem;
+
+  --adv-py: 4rem;
+  --adv-grid-cols: 100%;
+  --adv-grid-gap-x: 0.75rem;
+  --adv-grid-gap-y: 2.5rem;
+
+  --ls: -0.02em;
+
+  --footer-py: 1.75rem;
+  --footer-spacing: 15.125rem;
+
+  // gradients
+  --title-gradient: linear-gradient(95.25deg, rgba(var(--w-clr), 1) 17.97%, rgba(var(--main-clr), 1) 170.75%);
+  --border-gradient: linear-gradient(180deg, rgba(var(--w-clr), 0.2) 0%, rgba(var(--main-clr), 1) 100%);
+
+
+}
+
+$desk-sm-mq: 90em;
+$desk-xs-mq: 85.375em;
+$desk-xl-mq: 120em;
+$tab-mq: 75em;
+$mob-mq: 40em;
+$sm-mob-mq: 24.0625em;
+
+@include min-w($desk-sm-mq) {
+  :root {
+
+  }
+}
+
+@include min-w($desk-xl-mq) {
+  :root {
+
+  }
+}
+
+@include min-w($mob-mq) {
+  :root {
+    --f-title: var(--f-4xl);
+
+    --adv-py: 8.25rem;
+    --adv-grid-cols: 2;
+  }
+}
+
+@include min-w($tab-mq) {
+  :root {
+    --f-title: var(--f-5xl);
+
+    --adv-grid-gap-x: 1.5rem;
+
+    --footer-spacing: 9.5rem;
+  }
+}
+
+@include min-w($desk-xs-mq) {
+  :root {
+    --f-title: calc(var(--f-3xl) * 2);
+
+    --adv-grid-cols: 3;
+
+    --cont-px: 1.25rem;
+
+    --promo-sec-h: 45rem;
+  }
+}

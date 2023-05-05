@@ -1,0 +1,60 @@
+.promo {
+  background-size: cover;
+  background-position: bottom;
+
+  min-height: calc(var(--promo-sec-h) + var(--footer-spacing));
+
+  display: grid;
+  place-items: center;
+  &__body {
+    text-align: center;
+  }
+  &__title {
+    --f-title: var(--f-4xl);
+
+    margin-bottom: 2rem;
+
+    letter-spacing: -0.01em;
+
+    @include title(48.25rem);
+
+    line-height: 130%;
+
+    & > span {
+      display: block;
+
+      margin-top: 0.25rem;
+
+      font-size: calc(var(--f-3xl) * 2);
+
+      line-height: 80%;
+    }
+  }
+  &__subheading {
+    @include m-auto;
+
+    max-width: 23.5rem;
+
+    p {
+      color: rgba(var(--w-clr), .8);
+    }
+  }
+}
+
+@include min-w($mob-mq) {
+  .promo {
+    &__title {
+      --f-title: calc(var(--f-xl) * 2);
+    }
+  }
+}
+
+@include min-w($tab-mq) {
+  .promo {
+    &__title {
+      & > span {
+        font-size: calc(var(--f-3xl) * 4);
+      }
+    }
+  }
+}

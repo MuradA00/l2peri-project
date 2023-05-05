@@ -1,0 +1,109 @@
+.advantages {
+  --subheading-width: 42.75rem;
+  --heading-margin: 2.5rem;
+  --adv-item-h: 17.75rem;
+  --frame-p: 0.5rem;
+  --descr-width: 18rem;
+
+  padding: var(--adv-py) 0;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &__heading {
+    @include m(b, var(--heading-margin));
+  }
+  &__title {
+    @include title(54.25rem);
+
+    @include m(b, 2rem);
+  }
+  &__subheading {
+    text-align: center;
+
+    & > p {
+      font-size: var(--f-sm);
+      line-height: 133.333333%;
+
+      max-width: var(--subheading-width);
+
+      @include m-auto;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--adv-grid-cols), 1fr);
+
+    grid-gap: var(--adv-grid-gap-y) var(--adv-grid-gap-x);
+  }
+  &__item-frame {
+    padding: var(--frame-p);
+
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: var(--border-gradient);
+
+    @include m(b, 2rem);
+  }
+  &__item-image {
+    background-color: rgba(var(--b-clr), 1);
+
+    min-height: var(--adv-item-h);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__item {
+    text-align: center;
+  }
+  &__item-heading {
+    text-transform: uppercase;
+
+    font-family: var(--ff_o);
+    font-size: var(--f-2xl);
+    letter-spacing: var(--ls);
+
+    @include title-shadow(rgba(var(--w-clr),0.25));
+    @include m(b, 1rem);
+  }
+  &__item-descr {
+    max-width: var(--descr-width);
+
+    @include m-auto;
+    p {
+      color: rgba(var(--w-clr), .8);
+
+      font-size: var(--f-sm);
+
+      line-height: 133.333333%;
+    }
+  }
+}
+
+@include min-w($mob-mq) {
+  .advantages {
+    --heading-margin: 5.125rem;
+    --adv-item-h: 24rem;
+
+    &__subheading {
+      p {
+        font-size: var(--f-xm);
+      }
+    }
+    &__item-descr {
+      p {
+        font-size: var(--f-xm);
+      }
+    }
+  }
+}
+
+@include min-w($tab-mq) {
+  .advantages {
+    &__item-heading {
+      font-size: var(--f-4xl);
+    }
+  }
+}
