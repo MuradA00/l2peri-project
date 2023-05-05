@@ -1,0 +1,46 @@
+.pagination {
+  --frame-width: 11.25rem;
+  --bullet-rotate: 45deg;
+  --bullet-bg: 217, 217, 217;
+  --bullet-w: 0.5rem;
+  --bullet-h: 0.5rem;
+
+  @include fl(row, center, 1.5rem);
+
+  justify-content: center;
+
+  &__frame {
+    max-width: var(--frame-width);
+  }
+  &__row {
+    @include fl(row, center, 1rem);
+    width: fit-content !important;
+
+    .swiper-pagination-bullet {
+      border-radius: 0 !important;
+
+      margin: 0 !important;
+
+      width: var(--bullet-w) !important;
+      height: var(--bullet-h) !important;
+
+      background: rgba(var(--bullet-bg), 1);
+
+      transform: rotate(var(--bullet-rotate));
+      @include tr(300);
+
+      opacity: .2;
+    }
+    .swiper-pagination-bullet-active {
+      background: rgba(var(--main-clr), 1);
+
+      opacity: 1;
+    }
+  }
+}
+
+@include min-w($mob-mq) {
+  .pagination {
+    --frame-width: 19.625rem;
+  }
+}

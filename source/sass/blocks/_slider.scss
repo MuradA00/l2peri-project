@@ -1,0 +1,70 @@
+.slider {
+  --slider-item-h: 24.4375rem;
+  --content-width: 23.5rem;
+  --section-mb: 4rem;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  @include m(b, var(--section-mb));
+
+  &__title {
+    @include title(60.1875rem);
+
+    @include m(b, 2rem);
+  }
+  &__inner {
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  &__body {
+    min-height: var(--slider-sec-h);
+  }
+  &__item {
+    min-height: var(--slider-item-h);
+
+    display: grid;
+    place-items: center;
+  }
+  &__item-content {
+    @include fl(column, center, 0.75rem);
+    justify-content: center;
+
+    text-align: center;
+
+    max-width: var(--content-width)
+  }
+  &__item-heading {
+    @include title-shadow(rgba(var(--w-clr), .25));
+
+    letter-spacing: var(--ls);
+    font-family: var(--ff_o);
+    text-transform: uppercase;
+    font-size: var(--f-2xl);
+  }
+}
+
+@include min-w($mob-mq) {
+  .slider {
+    --slider-item-h: 30.6875rem;
+    --content-width: 48.1875rem;
+    --section-mb: 7rem;
+
+    &__item-heading {
+      font-size: var(--f-3xl);
+    }
+    &__inner {
+      background-size: 100% 105%;
+    }
+  }
+}
+
+@include min-w($tab-mq) {
+  .slider {
+    &__item-heading {
+      font-size: var(--f-4xl);
+    }
+  }
+}

@@ -1,0 +1,21 @@
+.button {
+
+  background-size: 100% 100%;
+  background-position: center;
+
+  @include btn-shine;
+
+  span {
+    color: rgba(var(--w-clr), 1);
+
+    font-size: var(--f-sm);
+
+    position: relative;
+    @include z-2;
+
+    @include min-w($mob-mq) {
+      font-size: var(--f-xm);
+    }
+  }
+}
+

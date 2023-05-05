@@ -1,0 +1,40 @@
+.worlds {
+  --cont-width: 100%;
+  --cont-px: 0.75rem;
+  --slider-h: 25.5rem;
+  --slider-w: 100%;
+  --title-margin: 4rem;
+  --worlds-py: 4rem;
+
+  padding-top: var(--worlds-py);
+  &__title {
+    @include title(75.75rem);
+
+    @include m(b, var(--title-margin));
+  }
+  &__inner {
+    @include m(b, 4rem);
+  }
+  &__slider-item {
+    // width: var(--slider-w) !important;
+    height: var(--slider-h) !important;
+  }
+  &__slider-content {
+    & > iframe {
+      position: absolute;
+
+      inset: 0;
+
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@include min-w($mob-mq) {
+  .worlds {
+    --slider-w: 34rem;
+    --title-margin: 7.5rem;
+    --cont-px: 0;
+  }
+}

@@ -5,10 +5,12 @@
   --w-clr: 255, 255, 255;
   --b-clr: 0, 0, 0;
   --main-clr: 131, 116, 93;
-  --bg-body: 33, 35, 40;
+  --bg-body: 18, 18, 18;
 
   --cont-width: 104.875rem;
   --cont-px: 0.75rem;
+
+  --ls: -0.02em;
 
   --f-xs: 0.75rem;
   --f-sm: 0.875rem;
@@ -22,23 +24,33 @@
   --f-5xl: 2.5rem;
   --f-title: var(--f-4xl);
 
-  --promo-sec-h: 30rem;
+  --header-h: 3rem;
 
-  --adv-py: 4rem;
+  --features-grid-cols: 1;
+  --features-gap-x: 1rem;
+  --features-gap-y: 1.75rem;
+  --features-item-px: 0.625rem;
+
+  --slider-sec-h: 35rem;
+
+  --adv-py: 3.5rem;
   --adv-grid-cols: 100%;
   --adv-grid-gap-x: 0.75rem;
   --adv-grid-gap-y: 2.5rem;
 
-  --ls: -0.02em;
+  --promo-sec-h: 20rem;
 
   --footer-py: 1.75rem;
-  --footer-spacing: 15.125rem;
+  --footer-spacing: 14.125rem;
+
+  --btn-transition: cubic-bezier(0,1,1,1);
 
   // gradients
   --title-gradient: linear-gradient(95.25deg, rgba(var(--w-clr), 1) 17.97%, rgba(var(--main-clr), 1) 170.75%);
   --border-gradient: linear-gradient(180deg, rgba(var(--w-clr), 0.2) 0%, rgba(var(--main-clr), 1) 100%);
-
-
+  --link-pseudo-shadow-gradient: radial-gradient(55.83% 55.83% at 50% 44.17%, rgba(157, 133, 98, 0.6) 0%, rgba(20, 21, 21, 0) 79.11%);
+  --promo-btn-bg: radial-gradient(50% 50% at 50% 50%, rgba(131, 116, 93, 0.4) 0%, rgba(131, 116, 93, 0) 100%);
+  --home-gradient: linear-gradient(180deg, #121212 0%, rgba(18, 18, 18, 0) 100%);
 }
 
 $desk-sm-mq: 90em;
@@ -64,7 +76,11 @@ $sm-mob-mq: 24.0625em;
   :root {
     --f-title: var(--f-4xl);
 
-    --adv-py: 8.25rem;
+    --slider-sec-h: 48.75rem;
+
+    --features-grid-cols: 2;
+    --features-gap-x: 1.5rem;
+
     --adv-grid-cols: 2;
   }
 }
@@ -73,9 +89,16 @@ $sm-mob-mq: 24.0625em;
   :root {
     --f-title: var(--f-5xl);
 
-    --adv-grid-gap-x: 1.5rem;
+    --header-h: 4rem;
 
-    --footer-spacing: 9.5rem;
+    --features-item-px: 1rem;
+
+    --adv-grid-gap-x: 1.5rem;
+    --adv-py: 8.25rem;
+
+    --footer-spacing: 6.5rem;
+
+    --promo-sec-h: 45rem;
   }
 }
 
@@ -83,10 +106,10 @@ $sm-mob-mq: 24.0625em;
   :root {
     --f-title: calc(var(--f-3xl) * 2);
 
+    --features-grid-cols: 4;
+
     --adv-grid-cols: 3;
 
     --cont-px: 1.25rem;
-
-    --promo-sec-h: 45rem;
   }
 }

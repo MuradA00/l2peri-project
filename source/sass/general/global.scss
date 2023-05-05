@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   color: rgba(var(--w-clr),1);
-  background-color: rgba(var(--b-clr),1);
+  background-color: rgba(var(--bg-body),1);
   width: 100%;
   position: relative;
   font-family: inherit;
@@ -12,6 +12,8 @@ body {
   min-height: -webkit-fill-available;
   display: flex;
   flex-direction: column;
+
+  overflow-x: hidden;
 
   min-height: 100vh;
 
@@ -68,6 +70,8 @@ html {
   line-height: normal;
   min-height: 100vh;
   min-height: -webkit-fill-available;
+
+  overflow-x: hidden;
 
   scroll-behavior: smooth;
 }

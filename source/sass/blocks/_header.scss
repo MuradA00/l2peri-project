@@ -1,0 +1,88 @@
+.header {
+  --cont-width: 100%;
+  --cont-px: 0;
+  --logo-width: 5.75rem;
+  --download-btn-h: 3rem;
+  --btn-width: 8rem;
+
+  position: absolute;
+
+  padding-left: 0.75rem;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: var(--header-h);
+
+  display: grid;
+  align-items: center;
+
+  border-bottom: 1px solid rgba(var(--w-clr), .1);
+
+  @include z-3;
+
+  &__logo {
+    max-width: var(--logo-width);
+  }
+  &__row {
+    @include fl(row, center, 1rem);
+
+    justify-content: space-between;
+  }
+  &__actions {
+    @include fl(row, center, 0.75rem);
+  }
+  &__download {
+    @include btn(var(--header-h));
+
+    background-image: url(../../img/button/btn-overlay.png);
+
+    width: var(--btn-width);
+
+    @extend .button;
+  }
+  &__panel {
+    display: none;
+
+    font-size: var(--f-sm);
+
+    color: rgba(var(--w-clr), 1);
+
+    @include tr(300);
+
+    @include hover {
+      &:hover {
+        color: rgba(var(--w-clr), 1);
+      }
+    }
+  }
+}
+
+@include min-w($mob-mq) {
+  .header {
+    padding-left: 1.5rem;
+
+    &__panel {
+      color: rgba(var(--w-clr), .6);
+    }
+    &__actions {
+      grid-gap: 2rem;
+    }
+  }
+}
+
+@include min-w($tab-mq) {
+  .header {
+    &__panel {
+      display: block;
+    }
+  }
+}
+
+@include min-w($tab-mq) {
+  .header {
+    --logo-width: 9rem;
+    --btn-width: 10rem;
+  }
+}

@@ -1,0 +1,10 @@
+.bottom {
+  background-size: auto auto;
+  background-position: left;
+  background-repeat: no-repeat;
+
+  @include min-w($tab-mq) {
+    background-size: 100% auto;
+    background-position: bottom;
+  }
+}
