@@ -1,0 +1,19 @@
+.grid {
+  position: absolute;
+
+  height: 100%;
+  width: 100%;
+
+  border-top: 1px solid rgba(var(--w-clr), .1);
+  border-bottom: 1px solid rgba(var(--w-clr), .1);
+
+  display: grid;
+  grid-template-columns: repeat(var(--calendar-grid-cols), 1fr);
+  &__column {
+    &:not(:first-child) {
+      background-color: rgba(var(--w-clr), .1);
+      width: 1px;
+      height: 100%;
+    }
+  }
+}

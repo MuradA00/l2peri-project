@@ -95,7 +95,7 @@
   &__info {
     @include m(b, 1.5rem);
 
-    max-width: 23.5rem;
+    max-width: 16.5rem;
 
     @include m-auto;
   }
@@ -103,7 +103,7 @@
     @include btn-hover;
     @include btn(3.5rem);
 
-    width: 9rem;
+    min-width: 9rem;
 
     @extend .button;
 
@@ -131,7 +131,7 @@
   &__play-btn {
     @include tr(300);
 
-    max-width: 5.25rem;
+    max-width: 4.25rem;
 
     @include hover {
       &:hover {
@@ -167,6 +167,8 @@
 
       margin-right: 0;
       margin-left: 0;
+
+      max-width: 23.5rem;
     }
     &__person {
       left: 22.5%;
@@ -181,7 +183,10 @@
     &__play {
       @include btn(5rem);
 
-      width: 11.25rem;
+      min-width: 11.25rem;
+    }
+    &__play-btn {
+      max-width: 7rem;
     }
     &__actions {
       flex-direction: row;

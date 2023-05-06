@@ -1,7 +1,7 @@
 .advantages {
   --subheading-width: 42.75rem;
   --heading-margin: 2.5rem;
-  --adv-item-h: 17.75rem;
+  --adv-item-h: 14.5rem;
   --frame-p: 0.5rem;
   --descr-width: 18rem;
 
@@ -85,7 +85,7 @@
 @include min-w($mob-mq) {
   .advantages {
     --heading-margin: 5.125rem;
-    --adv-item-h: 24rem;
+    --adv-item-h: 17.4rem;
 
     &__subheading {
       p {
@@ -102,8 +102,15 @@
 
 @include min-w($tab-mq) {
   .advantages {
+
     &__item-heading {
       font-size: var(--f-4xl);
     }
+  }
+}
+
+@include min-w($desk-xs-mq) {
+  .advantages {
+    --adv-item-h: 24rem;
   }
 }

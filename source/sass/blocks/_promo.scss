@@ -25,7 +25,7 @@
 
       margin-top: 0.25rem;
 
-      font-size: calc(var(--f-3xl) * 2);
+      font-size: calc(var(--f-2xl) * 2);
 
       line-height: 80%;
     }
@@ -43,13 +43,11 @@
     }
   }
   &__play {
-    @include btn(5rem);
-
     background-image: url(../../img/button/large-btn-overlay.png);
 
-    width: 11.5rem;
+    min-width: 9rem;
 
-    @include btn(5rem);
+    @include btn(3.5rem);
     @include btn-shine;
     @include btn-hover;
 
@@ -80,6 +78,14 @@
 
     &__title {
       --f-title: calc(var(--f-xl) * 2);
+
+      & > span {
+        font-size: calc(var(--f-3xl) * 3);
+      }
+    }
+    &__play {
+      min-height: 5rem;
+      min-width: 11.5rem;
     }
   }
 }

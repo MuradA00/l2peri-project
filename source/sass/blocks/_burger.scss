@@ -1,11 +1,11 @@
 .burger {
   display: grid;
-  grid-gap: 0.5rem;
+  grid-gap: 0.4rem;
 
   span {
     display: block;
 
-    background-color: rgba(var(--w-clr), 1);
+    background-color: rgba(var(--w-clr), .8);
 
     width: 2rem;
     height: 0.1875rem;
@@ -14,7 +14,7 @@
   }
 }
 
-@include min-w($desk-q) {
+@include min-w($tab-mq) {
   .burger {
     display: none;
   }

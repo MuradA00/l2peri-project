@@ -148,5 +148,14 @@ if (Swiper) {
       clickable: true
     },
   })
+
+  const calendarRow = new Swiper('.calendar__inner', {
+    slidesPerView: 1,
+    speed: 1250,
+    navigation: {
+      nextEl: '.calendar__navigation-arrow--right',
+      prevEl: '.calendar__navigation-arrow--left'
+    }
+  })
 }
 

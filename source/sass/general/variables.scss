@@ -12,6 +12,7 @@
 
   --ls: -0.02em;
 
+  --f-xxs: 0.625rem;
   --f-xs: 0.75rem;
   --f-sm: 0.875rem;
   --f-base: 1rem;
@@ -28,8 +29,10 @@
 
   --features-grid-cols: 1;
   --features-gap-x: 1rem;
-  --features-gap-y: 1.75rem;
+  --features-gap-y: 2.75rem;
   --features-item-px: 0.625rem;
+
+  --calendar-grid-cols: 7;
 
   --slider-sec-h: 35rem;
 
@@ -51,6 +54,8 @@
   --link-pseudo-shadow-gradient: radial-gradient(55.83% 55.83% at 50% 44.17%, rgba(157, 133, 98, 0.6) 0%, rgba(20, 21, 21, 0) 79.11%);
   --promo-btn-bg: radial-gradient(50% 50% at 50% 50%, rgba(131, 116, 93, 0.4) 0%, rgba(131, 116, 93, 0) 100%);
   --home-gradient: linear-gradient(180deg, #121212 0%, rgba(18, 18, 18, 0) 100%);
+  --calendar-event-bg: linear-gradient(270deg, #826F4E -1.09%, rgba(var(--b-clr), 0) 100%);
+
 }
 
 $desk-sm-mq: 90em;

@@ -1,0 +1,193 @@
+.calendar {
+  --grid-wrapper-h: 12.5rem;
+  --grid-py: 4.625rem;
+  --title-margin: 2rem;
+  --events-pt: 2.25rem;
+  --arrow-width: 1.5rem;
+  --arrow-height: 1.5rem;
+  --events-location-calc: calc(100% / var(--calendar-grid-cols));
+  --arrow-margin: 0.625rem;
+  --event-block-p: 0.375rem;
+  --event-mb: .25rem;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  padding: var(--grid-py) 0;
+  &__inner {
+    position: relative;
+  }
+  &__title {
+    @include title(100%);
+
+    @include m(b, var(--title-margin));
+  }
+  &__grid-wrapper {
+    min-height: var(--grid-wrapper-h);
+
+    position: relative;
+  }
+  &__heading {
+    margin-bottom: .5rem;
+
+    display: flex;
+    align-items: center;
+  }
+  &__heads {
+    display: grid;
+    grid-template-columns: repeat(var(--calendar-grid-cols), 1fr);
+    align-items: flex-end;
+
+    flex: 1;
+  }
+  &__heads-item {
+    text-align: left;
+
+    color: rgba(var(--w-clr), 0.4);
+
+    @include fl(row, center, 0.25rem);
+
+    font-size: var(--f-xxs);
+
+    span {
+      display: none;
+    }
+  }
+  &__events-list {
+    padding: var(--events-pt) 0;
+  }
+  &__event-date {
+    p {
+      font-size: var(--f-xxs);
+
+      @include hide-text(1);
+    }
+  }
+  &__navigation {
+    @include fl(row, center, 1rem);
+
+    justify-content: center;
+
+    @include m(t, 1.5rem);
+  }
+  &__navigation-arrow {
+    width: var(--arrow-width);
+    height: var(--arrow-height);
+
+    @include tr(200);
+
+    display: grid !important;
+    place-items: center;
+
+    border: 1px solid rgba(var(--w-clr), .2);
+
+    cursor: pointer;
+
+    @include z-2;
+
+    @include hover {
+      &:hover {
+        border: 1px solid rgba(var(--w-clr), 1);;
+      }
+    }
+
+    .swiper-button-disabled {
+      cursor: default !important;
+
+      opacity: 0.4 !important;
+    }
+  }
+  &__event {
+    position: relative;
+
+    @include z-1;
+
+    @include fl(row, center, 14px);
+
+    padding: var(--event-block-p);
+
+    background-image: var(--calendar-event-bg);
+
+    max-width: calc(100% - (var(--event-column-countdown) * var(--events-location-calc)));
+
+    &:not(:last-child) {
+      margin-bottom: var(--event-mb);
+    }
+  }
+  &__event-name {
+    @include hide-text(1);
+    @include title-shadow(rgba(var(--w-clr), 0.25));
+
+    text-transform: uppercase;
+    font-family: var(--ff_o);
+    font-size: 0.6875rem;
+    letter-spacing: var(--ls);
+  }
+}
+
+@include min-w($mob-mq) {
+  .calendar {
+    --grid-wrapper-h: 31.25rem;
+    --grid-py: 7.25rem;
+    --title-margin: 7.375rem;
+    --events-pt: 3.125rem;
+    --event-block-p: 0.75rem;
+    --event-mb: .5rem;
+
+    &__heads-item {
+      font-size: var(--f-sm);
+
+      span {
+        display: block;
+      }
+      &:first-child {
+        padding-left: calc(var(--arrow-width) + var(--arrow-margin));
+      }
+      &:last-child {
+        padding-right: calc(var(--arrow-width) + var(--arrow-margin));
+      }
+    }
+    &__heading {
+      margin-bottom: 1.5rem;
+    }
+    &__event-name {
+      font-size: var(--f-xl);
+    }
+    &__event-date {
+      p {
+        font-size: var(--f-xs);
+      }
+    }
+    &__navigation-arrow {
+      position: absolute;
+
+      top: 0;
+
+      &--left {
+        left: 0;
+      }
+      &--right {
+        right: 0;
+      }
+    }
+  }
+}
+
+@include min-w($tab-mq) {
+  .calendar {
+    --event-block-p: 1rem;
+
+    &__heads-item {
+      font-size: var(--f-xm);
+    }
+    &__event-name {
+      font-size: var(--f-3xl);
+    }
+    &__event-date {
+      p {
+        font-size: var(--f-xm);
+      }
+    }
+  }
+}

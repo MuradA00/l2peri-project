@@ -8,6 +8,7 @@
   position: absolute;
 
   padding-left: 0.75rem;
+  padding-right: 0.75rem;
 
   top: 0;
   left: 0;
@@ -41,6 +42,10 @@
     width: var(--btn-width);
 
     @extend .button;
+
+    &:active {
+      transform: scale(.97);
+    }
   }
   &__panel {
     display: none;
@@ -74,15 +79,13 @@
 
 @include min-w($tab-mq) {
   .header {
+    --logo-width: 9rem;
+    --btn-width: 10rem;
+
+    padding-right: 0;
+
     &__panel {
       display: block;
     }
-  }
-}
-
-@include min-w($tab-mq) {
-  .header {
-    --logo-width: 9rem;
-    --btn-width: 10rem;
   }
 }
