@@ -37,9 +37,13 @@
   &__download {
     @include btn(var(--header-h));
 
+    width: 100%;
+
     background-image: url(../../img/button/btn-overlay.png);
 
     width: var(--btn-width);
+
+    padding: 0 !important;
 
     @extend .button;
 

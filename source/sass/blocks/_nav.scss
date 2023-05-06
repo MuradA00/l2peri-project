@@ -1,7 +1,7 @@
 .nav {
   --nav-gap: 1.75rem;
   --pseudo-shadow-width: 13rem;
-  --pseudo-shadow-height: 5.875rem;
+  --pseudo-shadow-height: 2.9375rem;
   --square-width: 0.875rem;
   --square-height: 0.875rem;
   --square-bg: 28, 29, 33;
@@ -28,6 +28,9 @@
     @include hover {
       &:not(.nav__link--selected):hover {
         color: rgba(var(--w-clr), 1);
+        &::after {
+          opacity: 1;
+        }
       }
     }
 
@@ -58,27 +61,39 @@
         transform: rotate(45deg) translateY(.5px) translateX(-1px);
       }
     }
+    &::after {
+      @include pseudo;
+
+      width: var(--pseudo-shadow-width);
+      height: var(--pseudo-shadow-height);
+
+      background-image: var(--link-pseudo-shadow-gradient);
+      background-size: contain;
+      background-position: top;
+      background-repeat: no-repeat;
+
+      pointer-events: none;
+
+      top: -0.35rem;
+      left: 50%;
+
+      transform: translateX(-50%);
+      @include tr(300);
+
+      background-image: $hover-enc;
+
+      opacity: 0;
+    }
     &--selected {
       color: rgba(var(--w-clr), 1);
       & > span {
         transform: rotate(45deg) translateX(-50%) scale(1);
         opacity: 1;
       }
+      &::after {
+        opacity: 1;
+      }
     }
-
-    // &::after {
-    //   @include pseudo;
-
-    //   width: var(--pseudo-shadow-width);
-    //   height: var(--pseudo-shadow-height);
-
-    //   background: var(--link-pseudo-shadow-gradient);
-
-    //   top: -0.25rem;
-    //   left: 50%;
-
-    //   transform: translateX(-50%);
-    // }
   }
 }
 

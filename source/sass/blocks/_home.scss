@@ -1,5 +1,5 @@
 .home {
-  --home-height: 33.75rem;
+  --home-height: 28.75rem;
   --home-py: 1.5rem;
 
   height: var(--home-height);
@@ -126,6 +126,8 @@
       text-transform: uppercase;
 
       max-width: 8rem;
+
+      display: none;
     }
   }
   &__play-btn {
@@ -196,6 +198,8 @@
 
       & > span {
         font-size: var(--f-xl);
+
+        display: block;
       }
     }
   }

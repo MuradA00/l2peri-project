@@ -132,6 +132,19 @@
   position: relative;
 }
 
+@mixin btn-effect {
+  &::after {
+    @include pseudo;
+
+    width: 12.5rem;
+    height: 8.375rem;
+
+    @include center;
+
+    background-image: $btn-effect;
+  }
+}
+
 @mixin btn-shine {
   overflow: hidden;
 
@@ -158,14 +171,14 @@
 
     filter: blur(0.75rem);
 
-    transform: translateX(-100px)  skewX(-15deg);
+    transform: translateX(-100%)  skewX(-15deg);
   }
   @include hover {
     &:hover {
       opacity: 1;
 
       &:before{
-        transform: translateX(300px)  skewX(-15deg);
+        transform: translateX(500%)  skewX(-15deg);
 
         opacity: 0.9;
 

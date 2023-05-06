@@ -50,21 +50,11 @@
     @include btn(3.5rem);
     @include btn-shine;
     @include btn-hover;
+    @include btn-effect;
 
     @extend .button;
 
     position: relative;
-
-    &::after {
-      @include pseudo;
-
-      width: 12.5rem;
-      height: 8.375rem;
-
-      background: var(--promo-btn-bg);
-
-      @include z-2;
-    }
 
     & > span {
       text-shadow: 0 0 0.25rem rgba(var(--w-clr), .2);

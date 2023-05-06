@@ -3,7 +3,7 @@
   background-position: left;
   background-repeat: no-repeat;
 
-  @include min-w($tab-mq) {
+  @include min-w($desk-xs-mq) {
     background-size: 100% auto;
     background-position: bottom;
   }

@@ -55,9 +55,6 @@
     &__item-heading {
       font-size: var(--f-3xl);
     }
-    &__inner {
-      background-size: 100% 105%;
-    }
   }
 }
 
@@ -65,6 +62,9 @@
   .slider {
     &__item-heading {
       font-size: var(--f-4xl);
+    }
+    &__inner {
+      background-size: 100% 105%;
     }
   }
 }

@@ -11,6 +11,8 @@
 
   &__frame {
     max-width: var(--frame-width);
+
+    display: flex;
   }
   &__row {
     @include fl(row, center, 1rem);
