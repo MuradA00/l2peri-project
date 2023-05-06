@@ -1,8 +1,8 @@
 .advantages {
   --subheading-width: 42.75rem;
-  --heading-margin: 2.5rem;
+  --heading-margin: 4rem;
   --adv-item-h: 14.5rem;
-  --frame-p: 0.5rem;
+  --frame-p: 0.25rem;
   --descr-width: 18rem;
 
   padding: var(--adv-py) 0;
@@ -44,7 +44,7 @@
     border-image-slice: 1;
     border-image-source: var(--border-gradient);
 
-    @include m(b, 2rem);
+    @include m(b, 1.5rem);
   }
   &__item-image {
     background-color: rgba(var(--b-clr), 1);
@@ -86,6 +86,7 @@
   .advantages {
     --heading-margin: 5.125rem;
     --adv-item-h: 17.4rem;
+    --frame-p: 0.5rem;
 
     &__subheading {
       p {
@@ -112,5 +113,9 @@
 @include min-w($desk-xs-mq) {
   .advantages {
     --adv-item-h: 24rem;
+
+    &__item-frame {
+      margin-bottom: 2rem;
+    }
   }
 }

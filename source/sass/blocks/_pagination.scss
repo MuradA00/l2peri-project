@@ -5,6 +5,8 @@
   --bullet-w: 0.5rem;
   --bullet-h: 0.5rem;
 
+  height: 1rem;
+
   @include fl(row, center, 1.5rem);
 
   justify-content: center;
