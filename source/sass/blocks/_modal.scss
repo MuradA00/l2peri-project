@@ -58,8 +58,6 @@
     border: 1px solid rgba(var(--main-clr), 1);
 
     transition: 300ms ease 200ms;
-
-    border-radius: 0.25rem;
   }
   &__inner {
     width: 100%;
@@ -98,6 +96,7 @@
 
     font-size: clamp(1.75rem, 2.25vw, 2.25rem);
     font-family: var(--ff_o);
+    font-weight: 400;
 
     @include m(b, clamp(2rem, 4vw, 4rem));
 

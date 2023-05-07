@@ -148,12 +148,6 @@
 @mixin btn-shine {
   overflow: hidden;
 
-  opacity: 1;
-
-  @include min-w($tab-mq) {
-    opacity: .7;
-  }
-
   &:before{
     @include pseudo;
 
@@ -171,7 +165,7 @@
 
     filter: blur(0.75rem);
 
-    transform: translateX(-100%)  skewX(-15deg);
+    transform: translateX(-200%)  skewX(-15deg);
   }
   @include hover {
     &:hover {
@@ -227,6 +221,9 @@
    text-transform: uppercase;
    letter-spacing: var(--ls);
 
+   position: relative;
+   @include z-1;
+
    @include m-auto;
 
    max-width: $width;
@@ -242,4 +239,5 @@
 
    @include title-shadow(rgba(var(--w-clr),0.25))
 }
+
 

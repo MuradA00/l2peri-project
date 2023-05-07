@@ -41,6 +41,9 @@
 
     flex: 1;
   }
+  &__item {
+    overflow: hidden;
+  }
   &__heads-item {
     text-align: left;
 
@@ -49,6 +52,12 @@
     @include fl(row, center, 0.25rem);
 
     font-size: var(--f-xxs);
+
+    @for $i from 1 through 7 {
+      &:nth-of-type(#{$i}) {
+        transition-delay: $i * .1s;
+      }
+    }
 
     span {
       display: none;

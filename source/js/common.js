@@ -1,5 +1,8 @@
 const playBtns = document.querySelectorAll('#play-btn'),
       body = document.body,
+      videoModal = document.querySelector('.video-modal'),
+      videoModalClose = document.querySelector('.video-modal__close'),
+      videoModalTrigger = document.querySelector('.home__play-btn'),
       modal = document.querySelector('.modal'),
       modalCloseBtn = document.querySelector('.modal__close');
       closeIcon = document.querySelector('.menu__close'),
@@ -7,6 +10,10 @@ const playBtns = document.querySelectorAll('#play-btn'),
       navLinks = document.querySelectorAll('.menu-nav__item a'),
       menu = document.querySelector('.menu'),
       html = document.documentElement;
+
+AOS.init({
+  once: true
+})
 
 function closeMenuByClick() {
   if (navLinks.length > 0) {
@@ -17,6 +24,39 @@ function closeMenuByClick() {
 }
 
 closeMenuByClick();
+
+if (videoModal) {
+
+  window.addEventListener('click', (e) => {
+    if (e.target === document.querySelector('.video-modal__container')) {
+      console.log(e);
+      videoModal.classList.remove('show-video')
+      body.classList.remove('body-locked')
+    }
+ })
+
+
+  videoModalTrigger.addEventListener('click', () => {
+    videoModalTrigger.classList.add('active-video')
+
+    if (videoModalTrigger.classList.contains('active-video')) {
+      videoModal.classList.add('show-video')
+      body.classList.add('body-locked')
+    } else {
+      videoModal.classList.remove('show-video')
+      body.classList.remove('body-locked')
+    }
+
+    videoModalClose.addEventListener('click', () => {
+      videoModalTrigger.classList.remove('active-video')
+      videoModal.classList.remove('show-video');
+      body.classList.remove('body-locked');
+
+    })
+
+
+  })
+}
 
 function showMenu() {
   closeIcon.classList.remove('closed')
@@ -100,10 +140,6 @@ if (Swiper) {
         slidesPerView: 4
       }
     }
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: true
-    // }
   })
 
   const sliderRow = new Swiper('.slider__inner', {
@@ -115,6 +151,7 @@ if (Swiper) {
       el: '.slider__pagination-row',
       clickable: true
     },
+    autoplay: true
   })
 
   const calendarRow = new Swiper('.calendar__inner', {

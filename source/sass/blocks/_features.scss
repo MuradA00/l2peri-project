@@ -24,6 +24,14 @@
     max-width: var(--item-width);
 
     @include m-auto;
+
+    @include hover {
+      &:hover .features__item-icon{
+        filter: drop-shadow(0 0 .5rem rgba(var(--main-clr),.6));
+
+        transform: scale(1.025);
+      }
+    }
   }
   &__item-heading {
     font-family: var(--ff_o);
@@ -39,6 +47,8 @@
     max-width: var(--icon-width);
 
     @include m-auto;
+
+    @include tr(300);
   }
   &__descr {
     @include m-auto;
@@ -74,7 +84,7 @@
 @include min-w($desk-xs-mq) {
   .features {
     &__item-heading {
-      font-size: var(--f-4xl);
+      font-size: var(--f-2xl);
     }
   }
 }

@@ -45,6 +45,8 @@
     border-image-source: var(--border-gradient);
 
     @include m(b, 1.5rem);
+
+    @include tr(300);
   }
   &__item-image {
     background-color: rgba(var(--b-clr), 1);
@@ -57,6 +59,12 @@
   }
   &__item {
     text-align: center;
+
+    @include hover {
+      &:hover .advantages__item-frame{
+        box-shadow: 0 0 1rem rgba(var(--main-clr), 1);
+      }
+    }
   }
   &__item-heading {
     text-transform: uppercase;

@@ -1,11 +1,15 @@
 .home {
   --home-height: 28.75rem;
   --home-py: 1.5rem;
+  $violet: rgba(130, 185, 191, .7);
+  $blue: rgba(125, 175, 184, .7);
 
   height: var(--home-height);
 
   background-size: cover;
   background-position: center;
+
+  overflow: hidden;
 
   position: relative;
 
@@ -60,9 +64,28 @@
     display: none;
 
     max-width: 32.5rem;
+
+    &::before {
+      @include pseudo;
+
+      border-radius: 50%;
+
+      width: 100%;
+      height: 100%;
+
+      transform: scale(.7);
+
+      animation:spin 2s linear infinite;
+      box-shadow:
+      inset 0px 0 100px $violet,
+      inset -0px 0 100px $blue,
+        -20px 0 60px $violet,
+        20px 0 60px $blue;
+    }
   }
   &__assassin-image {
     display: none;
+
   }
   &__body {
     padding-bottom: var(--home-py);
@@ -75,7 +98,7 @@
     @include z-2;
   }
   &__title {
-    @include title(34.625rem);
+    @include title(100%);
 
     margin-left: 0;
 
@@ -159,6 +182,8 @@
 
       @include m(b, 1.5rem);
 
+      max-width: 34.625rem;
+
       text-align: left;
     }
     &__content {
@@ -176,11 +201,24 @@
       left: 22.5%;
 
       top: 0;
-      right: 0;
+      left: 26%;
 
-      max-width: 37.5rem;
+      max-width: 26.5rem;
 
       display: block;
+    }
+    &__assassin-image {
+      @include z-1;
+
+      display: block;
+
+      max-width: 60.4375rem;
+
+      width: clamp(520px, 60.4375vw, 967px);
+
+      right: -11.625rem;
+
+      top: calc(var(--header-h) + 2.625rem);
     }
     &__play {
       @include btn(5rem);
@@ -215,7 +253,22 @@
       }
     }
     &__person {
+      top: 5%;
+      left: 22%;
+
+      max-width: 560px;
+    }
+  }
+}
+
+@include min-w($desk-xs-mq) {
+  .home {
+    &__person {
       max-width: 45rem;
+
+      left:22.5%;
+
+      right: unset;
 
       top: calc(var(--header-h) + 3.25rem);
       right: unset;
@@ -223,18 +276,17 @@
   }
 }
 
-@include min-w($desk-xs-mq) {
-  .home {
-    &__assassin-image {
-      @include z-1;
-
-      display: block;
-
-      max-width: 60.4375rem;
-
-      right: -3.625rem;
-
-      top: calc(var(--header-h) + 2.625rem);
-    }
+@keyframes spin {
+  0% {
+    transform: rotate(360deg) scale(.7);
+    opacity: 0;
   }
+  50% {
+    transform: rotate(0deg) scale(.75);
+    opacity: .7;
+  }
+ 100% {
+    opacity: 0;
+    transform: rotate(360deg) scale(.7);
+ }
 }
